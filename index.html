@@ -35,15 +35,13 @@
 		<script>
 			function cal(){
 				document.querySelector("article").innerHTML="Hello";
-				if(soju.checked){
-					cc = (weight/soju.value)*120;
-					
-					document.querySelector("article").innerHTML = "적정주량 : "+ Math.round(cc)+"ml";
-				}else if(macju.checked){
-					cc = (weight/macju.value)*120;
-					
-					document.querySelector("article").innerHTML = "적정주량 : "+ Math.round(cc)+"ml";
-				}
+					if(soju.checked){
+						cc = (weight.value/soju.value)*120;
+						document.querySelector("article").innerHTML = "적정주량 : "+ Math.round(cc)+"ml";
+					}else if(macju.checked){
+						cc = (weight.value/macju.value)*120;
+						document.querySelector("article").innerHTML = "적정주량 : "+ Math.round(cc)+"ml";
+					}
 			}
 		</script>
 		

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>주량계산기</title>
+		<style>
+			.wrap {border:1px solid #ccc; 
+				   width:250px; 
+				   text-align:center; 
+				   position:relative;
+				   margin:300px auto; padding:10px;}
+			.radiobox {margin:10px 0px;}
+			button {position:absolute; right:10px; top:12.5px; background:none; border:1px solid #ccc;}
+			
+			article {margin:20px;}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<input type="text" placeholder="몸무게" id="weight"/>
+			<button onclick="cal()">계산</button><br/>
+			<div class="radiobox">
+				<input type="radio" value="17.5" name="alc" id="soju" checked/>소주
+				<input type="radio" value="4.5" name="alc" id="macju"/>맥주
+				
+			</div>
+			<article>
+			
+			</article>
+			<p style="font-size:.7em">공식 출처 : 지식경제부 표준기술원</p>
+			<p style="font-size:.7em; color:red;">* 소주-참이슬(17.5도) 맥주-카스(4.5도)</p>
+		</div>
+		
+		<script>
+			function cal(){
+			var weight = document.querySelector("#weight").value;
+			var soju = document.querySelector("#soju");
+			var macju = document.querySelector("#macju");
+			
+			document.querySelector("article").innerHTML="Hello";
+				if(soju.checked){
+					cc = (weight/soju.value)*120;
+					
+					document.querySelector("article").innerHTML = "적정주량 : "+ Math.round(cc)+"ml";
+				}else if(macju.checked){
+					cc = (weight/macju.value)*120;
+					
+					document.querySelector("article").innerHTML = "적정주량 : "+ Math.round(cc)+"ml";
+				}
+			}
+		</script>
+		
+	</body>
+</html>
